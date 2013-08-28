@@ -21,10 +21,10 @@ Also, note that I use `pypy` ... you may want to use the regular `python` interp
 
 Resources
 ---------
-*sshpass[1]
-*gertboard[2]
-*wakeonlan[3]
-*MCT6[4]
+*[sshpass][1]
+*[gertboard][2]
+*[wakeonlan][3]
+*[MCT6][4]
 
 [circuit]: http://brontopixel.com/images/2013/08/12/ups.png "UPS Power Failure Detection Circuit"
 [1]: http://sourceforge.net/projects/sshpass/
