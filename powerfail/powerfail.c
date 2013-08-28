@@ -47,29 +47,26 @@ int main(void)
   setup_io();
   // Set GPIO pin 18 to the required mode
   setup_gpio();
-
+  //loop until power failure occurs by checking GPIO 18
   while (1)
   {
     b = GPIO_IN0;
     b = (b >> 18 ) & 0x01; // keep only bit 18
 
-    if (b==0) {
+    if (b==0) { //everything is normal
       flag=0;
-      //printf("b is 0\n");
     }
     if (b==1) {
       flag++;
-      if (flag==1) {
+      if (flag==1) { //momentary power sag?
         system("sh /root/powersag.sh");
       }
-      //printf("b is 1\n");
     }
-    if (flag>=10) {
+    if (flag>=10) { //UPS on battery power for more than 10 seconds, call orderly shutdown
       system("sh /root/powerfail.sh");
-      //printf("flag is 10+\nshutting down everything");
       break;
     }
-    sleep(1);
+    sleep(1);//sleep so we don't take up 100%cpu
   }
   unpull_pins();
   restore_io();
