@@ -1,4 +1,4 @@
-powerfail
+rpi-powerfail
 =========
 
 Power failure detection and orderly shutdown via Raspberry Pi.
