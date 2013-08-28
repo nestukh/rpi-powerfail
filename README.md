@@ -1,8 +1,7 @@
 powerfail
 =========
 
-Power failure detection and orderly shutdown via Raspberry Pi
-
+Power failure detection and orderly shutdown via Raspberry Pi.
 
 ![alt text][circuit]
 
